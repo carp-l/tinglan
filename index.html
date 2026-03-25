@@ -1,43 +1,31 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<meta name="theme-color" content="#1A202C">
+		<meta charset="UTF-8" />
+		<meta name="viewport"
+			  content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="theme-color" content="#1A202C" />
+
 		<title>庭兰 - 百业风云录</title>
+
 		<link rel="icon" type="image/svg+xml" href="https://www.yysls.cn/favicon.ico" />
-		<link rel="stylesheet" href="./CSS/styles.css">
-		<link rel="stylesheet" href="./CSS/video-responsive.css">
-		<link rel="stylesheet" href="./CSS/resolution-max-575.css">
-		<link rel="stylesheet" href="./CSS/resolution-max-767.css">
-		<link rel="stylesheet" href="./CSS/resolution-max-991.css">
-		<link rel="stylesheet" href="./CSS/resolution-max-1199.css">
-		<link rel="stylesheet" href="./CSS/resolution-max-1439.css">
-		<link rel="stylesheet" href="./CSS/resolution-max-1920.css">
-		<link rel="stylesheet" href="./CSS/resolution-max-2560.css">
-	<style>
-		/* 攻略模块补充样式（与现有美术风格保持一致） */
-		.strategy-section { position: relative; padding: 6rem 1rem; }
-		.strategy-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 260px 1fr; gap: 2rem; }
-		.strategy-tabs { display: flex; flex-direction: column; gap: .5rem; }
-		.strategy-tab { padding: .75rem 1rem; cursor: pointer; border-radius: 8px; background: rgba(255,255,255,.05); }
-		.strategy-tab.active { background: rgba(255,255,255,.15); }
-		.strategy-content { background: rgba(0,0,0,.35); border-radius: 16px; padding: 2rem; }
-		.strategy-accordion-item { margin-bottom: 1rem; border-radius: 12px; overflow: hidden; }
-		.strategy-accordion-header { padding: 1rem; cursor: pointer; background: rgba(255,255,255,.08); }
-		.strategy-accordion-body { display: none; padding: 1rem; background: rgba(0,0,0,.25); line-height: 1.7; }
-		.strategy-accordion-item.open .strategy-accordion-body { display: block; }
-		@media (max-width: 991px) {
-		.strategy-container { grid-template-columns: 1fr; }
-		.strategy-tabs { flex-direction: row; flex-wrap: wrap; }
-	}
-	</style>
+		<link rel="stylesheet" href="./CSS/styles.css" />
+		<link rel="stylesheet" href="./CSS/video-responsive.css" />
+		<link rel="stylesheet" href="./CSS/resolution-max-575.css" />
+		<link rel="stylesheet" href="./CSS/resolution-max-767.css" />
+		<link rel="stylesheet" href="./CSS/resolution-max-991.css" />
+		<link rel="stylesheet" href="./CSS/resolution-max-1199.css" />
+		<link rel="stylesheet" href="./CSS/resolution-max-1439.css" />
+		<link rel="stylesheet" href="./CSS/resolution-max-1920.css" />
+		<link rel="stylesheet" href="./CSS/resolution-max-2560.css" />
 	</head>
+
 	<body>
-    <!-- 背景音乐播放器 -->
+
+		<!-- 背景音乐播放器 -->
     <div class="audio-player">
         <audio id="backgroundAudio" class="audio-player__element">
             <source id="backgroundAudioSource" src="" type="audio/mpeg">
@@ -63,10 +51,12 @@
             </div>
 			<ul class="main-nav__menu">
 				<li>	<a href="#heroSection" class="main-nav__link">首页</a></li>
+				<li>	<a href="#videoShowcaseHeader" class="main-nav__link">百业圣经</a></li>
 				<li>	<a href="#organizationActivities" class="main-nav__link">百业活动</a></li>
 				<li>	<a href="#characterGallery" class="main-nav__link">百业人员</a></li>
 				<li>	<a href="#strategySection" class="main-nav__link">游戏攻略</a></li>
 				<li>	<a href="#contactSection" class="main-nav__link">加入我们</a></li>
+			
 			</ul>
 			
         </div>
@@ -91,11 +81,57 @@
         <div class="hero-section__overlay"></div>
     </section>
 
-    <!-- 百业混剪区域标题 -->
+    <!-- 百业圣经区域标题 -->
+		<div id="videoShowcaseHeader" class="section-spacer">
+			<div class="section-header">
+				<h2 id="videoShowcaseTitle" class="section-header__title">百业圣经</h2>
+				<p id="videoShowcaseSubtitle" class="section-header__subtitle">所有人严肃阅读！</p>
+			</div>
+		</div>
 
 
-    <!-- 百业混剪区域 -->
-
+		<!-- 百业混剪区域 -->
+		<section id="videoShowcase" class="media-section media-section--video-bg">
+			<!-- 背景媒体将通过 JavaScript 动态创建 -->
+			<div class="media-section__overlay"></div>
+			<div class="video-carousel">
+				<button class="video-carousel__btn video-carousel__btn--prev" onclick="prevDemoVideo()">
+					<img src="https://www.yysls.cn/pc/fab/20250723194326/img/feature_prev_d3634779.png?image_process=format,png" alt="左箭头" style="width:70px;">
+                </button>
+				<div class="video-carousel__container">
+					<div class="video-carousel__media">
+						<div id="videoSectionText" class="video-section__text">
+							<img id="videoSectionLogo" src="" alt="logo2" class="video-section__logo" />
+							<h1 id="videoSectionTitle" class="video-section__title">庭兰</h1>
+							<p id="videoSectionSubtitle" class="video-section__subtitle">闲坐听风语，庭兰伴清欢</p>
+						</div>
+						<div id="videoSectionVideo" class="video-section__video">
+							<!-- 大屏幕(1200px及以上)显示的iframe -->
+							<iframe class="video-carousel__iframe" frameborder="0"
+                                src=""
+                                referrerpolicy="unsafe-url" allowfullscreen="">
+							</iframe>
+							<!-- 小屏幕(1199px及以下)显示的video -->
+							<video class="video-carousel__video" controls="">
+								<source src="" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+						</div>
+					</div>
+					<div class="video-btn-phone">
+						<button class="video-carousel__btn video-carousel__btn--prev2" onclick="prevDemoVideo()">
+							<img src="https://www.yysls.cn/pc/fab/20250723194326/img/feature_prev_d3634779.png?image_process=format,png" alt="左箭头" style="width:70px;">
+                        </button>
+						<button class="video-carousel__btn video-carousel__btn--next2" onclick="nextDemoVideo()">
+							<img src="https://www.yysls.cn/pc/fab/20250723194326/img/feature_next_6f404b40.png?image_process=format,png" alt="右箭头" style="width:70px;">
+                        </button>
+					</div>
+				</div>
+				<button class="video-carousel__btn video-carousel__btn--next" onclick="nextDemoVideo()">
+					<img src="https://www.yysls.cn/pc/fab/20250723194326/img/feature_next_6f404b40.png?image_process=format,png" alt="右箭头" style="width:70px;">
+                </button>
+			</div>
+		</section>
     <!-- 百业活动区域标题 -->
     <div id="organizationActivitiesHeader" class="section-spacer">
         <div class="section-header">
@@ -193,76 +229,58 @@
         </div>
     </section>
 
+		<!-- 游戏攻略区域标题（与其他模块完全统一） -->
+		<div id="strategyHeader" class="section-spacer">
+			<div class="section-header">
+				<h2 id="strategyTitle" class="section-header__title">游戏攻略</h2>
+				<p id="strategySubtitle" class="section-header__subtitle">系统解析 · 流程指引 · 实战技巧</p>
+			</div>
+		</div>
+
+		<!-- 游戏攻略模块 -->
+		<section id="strategySection" class="media-section media-section--strategy-bg">
+			<!-- 统一遮罩层 -->
+			<div class="media-section__overlay"></div>
+
+			<div class="strategy-wrapper">
+				<!-- 4个交互Tab：紧挨着标题下方 -->
+				<aside class="strategy-nav">
+					<button class="strategy-tab active" data-target="strategy-newbie">新手模块</button>
+					<button class="strategy-tab" data-target="strategy-faction">门派介绍</button>
+					<button class="strategy-tab" data-target="strategy-build">流派模块</button>
+					<button class="strategy-tab" data-target="strategy-pvp">PVP 进阶</button>
+				</aside>
+
+				<!-- 内容面板 -->
+				<div class="strategy-content">
+					<div class="strategy-panel active" id="strategy-newbie">
+						<div class="strategy-card">
+							<h3>新手模块</h3>
+							<p>内容待补充</p>
+						</div>
+					</div>
+					<div class="strategy-panel" id="strategy-faction">
+						<div class="strategy-card">
+							<h3>门派介绍</h3>
+							<p>内容待补充</p>
+						</div>
+					</div>
+					<div class="strategy-panel" id="strategy-build">
+						<div class="strategy-card">
+							<h3>流派模块</h3>
+							<p>内容待补充</p>
+						</div>
+					</div>
+					<div class="strategy-panel" id="strategy-pvp">
+						<div class="strategy-card">
+							<h3>PVP 进阶</h3>
+							<p>内容待补充</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		
-	<!-- 新增：游戏攻略模块标题 -->
-	<div id="strategyHeader" class="section-spacer">
-		<div class="section-header">
-			<h2 class="section-header__title">游戏攻略</h2>
-			<p class="section-header__subtitle">系统解析 · 流程指引 · 实战技巧</p>
-		</div>
-	</div>
-
-	<!-- 新增：游戏攻略模块 -->
-	<section id="strategySection" class="strategy-section media-section--organization-bg">
-		<div class="media-section__overlay"></div>
-		<div class="strategy-container">
-			<!-- 左侧分类（参考 lym.animed.cn 的结构：分类 + 内容） -->
-			<div class="strategy-tabs" id="strategyTabs">
-				<div class="strategy-tab active" data-target="tab-newbie">新手入门</div>
-				<div class="strategy-tab" data-target="tab-growth">成长进阶</div>
-				<div class="strategy-tab" data-target="tab-battle">实战技巧</div>
-				<div class="strategy-tab" data-target="tab-faq">常见问题</div>
-			</div>
-
-			<!-- 右侧内容区 -->
-			<div class="strategy-content">
-				<div class="strategy-panel" id="tab-newbie">
-					<div class="strategy-accordion-item">
-						<div class="strategy-accordion-header">① 游戏基础系统介绍</div>
-						<div class="strategy-accordion-body">
-							介绍游戏核心玩法、基础系统与常用界面，帮助新玩家快速理解整体框架。
-						</div>
-					</div>
-					<div class="strategy-accordion-item">
-						<div class="strategy-accordion-header">② 新手推荐发展路线</div>
-						<div class="strategy-accordion-body">
-							提供前期资源分配、任务优先级与避坑建议，减少试错成本。
-						</div>
-					</div>
-				</div>
-
-				<div class="strategy-panel" id="tab-growth" style="display:none;">
-					<div class="strategy-accordion-item">
-						<div class="strategy-accordion-header">① 职业与流派选择</div>
-						<div class="strategy-accordion-body">
-							分析不同职业定位、适配场景以及百业协作关系。
-						</div>
-					</div>
-				</div>
-
-				<div class="strategy-panel" id="tab-battle" style="display:none;">
-					<div class="strategy-accordion-item">
-						<div class="strategy-accordion-header">① 副本与团队配合</div>
-						<div class="strategy-accordion-body">
-							核心机制拆解，站位、技能释放顺序与团队分工说明。
-						</div>
-					</div>
-				</div>
-
-				<div class="strategy-panel" id="tab-faq" style="display:none;">
-					<div class="strategy-accordion-item">
-						<div class="strategy-accordion-header">① 常见问题汇总</div>
-						<div class="strategy-accordion-body">
-							汇总玩家高频问题与官方、实践验证后的解决方案。
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
 
 	<!-- 关于我们区域 -->
     <section id="aboutSection" class="content-section">
@@ -274,9 +292,13 @@
             </div>
             <div class="about-section__content">
                 <div class="about-section__text about-section__text--primary">
-                    <p>风华无缺致力于展示各流派咸鱼人生的风采。</p>
-                    <p>我们相信，每个人都有自己的独特价值。</p>
+                    <p>休闲养老百业，玩得休闲玩得愉快</p>
+                    <p>我们相信，每个人都有自己的独特价值。</p>					
                 </div>
+				<div class="about-section__text about-section__text--primary">
+					<p>祝大家玩得开心</p>
+					<p>欢迎各位少侠加入我们</p>
+				</div>				
             </div>
         </div>
     </section>
@@ -286,8 +308,9 @@
         <div class="container">
             <div class="site-footer__content">
                 <div class="site-footer__section">
-                    <h3>风华无缺</h3>
+                    <h3>庭兰</h3>
                     <p>展示各流派咸鱼人才，弘扬咸鱼精神</p>
+
                 </div>
                 <div class="site-footer__section">
                     <h4>加入我们</h4>
@@ -296,12 +319,12 @@
                 <div class="site-footer__section">
                     <h4>关注我们</h4>
                     <div class="site-footer__social">
-                        <a class="site-footer__social-link">抖音：峰伈</a>
+                        <a class="site-footer__social-link">作者：xiaoyu</a>
                     </div>
                 </div>
             </div>
             <div class="site-footer__bottom">
-                <p>&copy; 2025 风华无缺. 保留所有权利.</p>
+                <p>&copy; 2026 庭兰. 保留所有权利.</p>
             </div>
         </div>
     </footer>
@@ -312,22 +335,6 @@
     <script src="script.js"></script>
 
 
-<script>
-	// 攻略模块 Tabs 切换
-	document.querySelectorAll('.strategy-tab').forEach(tab => {
-	tab.addEventListener('click', () => {
-	document.querySelectorAll('.strategy-tab').forEach(t => t.classList.remove('active'));
-	tab.classList.add('active');
-	document.querySelectorAll('.strategy-panel').forEach(p => p.style.display = 'none');
-	document.getElementById(tab.dataset.target).style.display = 'block';
-	});
-	});
-	// 手风琴交互
-	document.querySelectorAll('.strategy-accordion-header').forEach(header => {
-	header.addEventListener('click', () => {
-	header.parentElement.classList.toggle('open');
-	});
-	});
-</script>
+
 </body>
 </html>

@@ -1171,3 +1171,231 @@ body {
 }
 
 
+/* ================= 游戏攻略模块（顶部横向最终版） ================= */
+
+
+/* 顶部横向 Tab */
+.strategy-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+
+/* Tab 按钮 */
+.strategy-tab {
+  padding: 12px 22px;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  color: #CBD5E0;
+  cursor: pointer;
+}
+
+.strategy-tab.active {
+  background: linear-gradient(135deg, #9A67D3, #5A3CA8);
+  color: #fff;
+}
+
+/* 内容区域 */
+.strategy-content {
+  width: 100%;
+}
+
+/* 内容切换 */
+.strategy-panel {
+  display: none;
+}
+
+.strategy-panel.active {
+  display: block;
+}
+
+/* 内容卡片 */
+.strategy-card {
+  background: rgba(0,0,0,0.35);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+/* 手机端横滑 */
+@media (max-width: 768px) {
+  .strategy-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .strategy-tab {
+    flex-shrink: 0;
+  }
+}
+
+#strategySection .strategy-container {
+  position: relative;
+  z-index: 3; /* ✅ 高于 overlay */
+}
+
+/* ==================== 紧急修复：必加代码 ==================== */
+/* 1. 修复区域标题深色背景+深色文字=看不见（致命问题） */
+.section-spacer .section-header__title {
+  color: #F7FAFC !important;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.section-spacer .section-header__subtitle {
+  color: #CBD5E0 !important;
+}
+
+/* 2. 显示手机端轮播按钮（视频/活动） */
+.video-btn-phone,
+.organization-btn-phone {
+  display: none;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+@media (max-width: 991px) {
+  .video-btn-phone,
+  .organization-btn-phone {
+    display: flex !important;
+  }
+}
+
+/* 3. 游戏攻略容器基础布局（防止错位/覆盖） */
+.strategy-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 4. 修复角色展示布局冲突 */
+.character-showcase {
+  flex-wrap: unset !important;
+}
+
+/* 5. 修复活动卡片固定宽度溢出屏幕 */
+.organization-carousel__content {
+  width: 100% !important;
+  max-width: 750px;
+}
+
+/* ==================== 游戏攻略模块 - 全局风格统一 ==================== */
+/* 1. 继承其他模块的背景/遮罩/布局 */
+.media-section--strategy-bg {
+  background: linear-gradient(135deg, rgba(154, 103, 211, 0.2) 10%, rgba(0, 0, 0, 0.8) 100%);
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* 2. 标题紧挨着布局，无空隙 */
+.strategy-wrapper {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* 标题和Tab之间仅留微小间距 */
+}
+
+/* 3. 统一字体：和其他模块完全一致 */
+#strategySection .section-header__title {
+  font-family: "PING FANG ZHUI FENG";
+  color: #F7FAFC;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+#strategySection .section-header__subtitle {
+  font-family: "PING FANG ZHUI FENG";
+  color: #CBD5E0;
+}
+
+/* 4. 统一Tab样式：匹配百业活动/角色模块按钮风格 */
+.strategy-nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+}
+.strategy-tab {
+  padding: 12px 28px;
+  background: rgba(26, 32, 44, 0.8);
+  border: 2px solid rgba(247, 250, 252, 0.2);
+  border-radius: 50px; /* 统一圆角 */
+  font-family: "PING FANG ZHUI FENG";
+  font-size: 1.1rem;
+  color: #E2E8F0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+.strategy-tab.active {
+  background: linear-gradient(135deg, #9A67D3, #5A3CA8);
+  border-color: #9A67D3;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(154, 103, 211, 0.4);
+}
+.strategy-tab:hover {
+  transform: translateY(-2px);
+  border-color: rgba(247, 250, 252, 0.5);
+}
+
+/* 5. 统一内容卡片：和百业活动卡片风格一致 */
+.strategy-content {
+  width: 100%;
+  margin-top: 30px;
+}
+.strategy-card {
+  background: linear-gradient(135deg, rgba(26, 32, 44, 0.9), rgba(45, 55, 72, 0.9));
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: center;
+}
+.strategy-card h3 {
+  font-family: "PING FANG ZHUI FENG";
+  font-size: 2rem;
+  color: #F7FAFC;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.strategy-card p {
+  font-size: 1.2rem;
+  color: #E2E8F0;
+  line-height: 1.8;
+}
+
+/* 6. 内容切换逻辑（保留） */
+.strategy-panel {
+  display: none;
+}
+.strategy-panel.active {
+  display: block;
+}
+
+/* 7. 移动端适配 */
+@media (max-width: 768px) {
+  .strategy-nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 10px;
+  }
+  .strategy-tab {
+    flex-shrink: 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  .strategy-card {
+    padding: 25px;
+  }
+}
+
+/* 游戏攻略Tab紧挨着统一大标题 */
+.strategy-wrapper {
+  margin-top: -50px !important;
+}

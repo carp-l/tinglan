@@ -1137,6 +1137,29 @@ function preloadCharacterImages() {
     });
 }
 
+// ================= 游戏攻略 Tab 切换 =================
+function initStrategyTabs() {
+  const tabs = document.querySelectorAll('.strategy-tab');
+  const panels = document.querySelectorAll('.strategy-panel');
+  
+  if (!tabs.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.dataset.target;
+      
+      // 切换Tab高亮
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      // 切换内容面板
+      panels.forEach(panel => panel.classList.remove('active'));
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) targetPanel.classList.add('active');
+    });
+  });
+}
+
 // 初始化函数
 function initializeApp() {
     // 首先应用配置
@@ -1240,6 +1263,9 @@ function initializeApp() {
             });
         }
     }, { once: true });
+
+    initStrategyTabs();
+
 }
 
 // 页面加载完成后初始化
